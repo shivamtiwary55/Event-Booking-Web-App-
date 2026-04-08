@@ -1,6 +1,6 @@
 // yaha hum email bhejne ke liye nodemailer ka use karenge aur dotenv ka use karenge environment variables ko manage karne ke liye. 
 // Is file mein hum ek transporter create karenge jo Gmail
-// service ka use karega aur authentication ke liye environment variables se email user aur password lega.
+// service ka use karega aur authentication ke liye environment variables se email user aur password lega..
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 

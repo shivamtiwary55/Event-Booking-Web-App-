@@ -4,16 +4,23 @@ const cors=require('cors');
 const mongoose=require('mongoose');
 const authRoutes=require('./routes/auth');
 
+const eventsRoutes=require('./routes/events');
+const bookingsRoutes=require('./routes/bookings');
+
 
 
 dotenv.config();
 
 const app=express();
 app.use(cors());
+app.use(express.json());
 
 //Routes
 
 app.use('/api/auth',authRoutes);
+app.use('/api/events',eventsRoutes);
+app.use('/api/bookings',bookingsRoutes);
+
 
 mongoose.connect(process.env.MONGO_URI)
    .then(()=>{
@@ -22,9 +29,6 @@ mongoose.connect(process.env.MONGO_URI)
     console.error('Error connecting to MongoDB:', err);
    });
    
-//json file khud hi parse kr lega, humko manually parse krne ki jarurat nhi hai.
-app.use(express.json());
-
 
 
 
